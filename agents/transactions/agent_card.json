@@ -1,0 +1,31 @@
+{
+  "name": "transactions-agent",
+  "description": "Answers questions about what actually happened on a customer account: charges, merchants, dates, recurrence and refunds. Knows the individual case, not the broader pattern.",
+  "url": "http://localhost:8001",
+  "version": "1.0.0",
+  "capabilities": {
+    "streaming": false,
+    "pushNotifications": false
+  },
+  "defaultInputModes": ["text"],
+  "defaultOutputModes": ["text"],
+  "skills": [
+    {
+      "id": "investigate_charge",
+      "name": "Investigate a charge",
+      "description": "Given a customer and a charge description, finds the matching charge and reports the merchant, amount, date, whether it recurs, how many times it has occurred and whether it was refunded.",
+      "examples": [
+        "Customer 1042 has an unrecognized charge of 49.90",
+        "What was charged to customer 1087 in September?"
+      ]
+    },
+    {
+      "id": "list_customer_charges",
+      "name": "List charges",
+      "description": "Lists every charge on a customer account, useful when the customer cannot specify which charge they are questioning.",
+      "examples": [
+        "Show all charges for customer 1042"
+      ]
+    }
+  ]
+}

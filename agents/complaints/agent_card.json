@@ -1,0 +1,31 @@
+{
+  "name": "complaints-agent",
+  "description": "Answers whether a complaint matches a known pattern, what usually causes it, how it has been resolved before and how often that resolution works. Knows the pattern, not the individual case.",
+  "url": "http://localhost:8002",
+  "version": "1.0.0",
+  "capabilities": {
+    "streaming": false,
+    "pushNotifications": false
+  },
+  "defaultInputModes": ["text"],
+  "defaultOutputModes": ["text"],
+  "skills": [
+    {
+      "id": "match_complaint_pattern",
+      "name": "Match a complaint to a known pattern",
+      "description": "Given a complaint description, finds whether it matches a known pattern and returns the root cause, the resolution that has been applied before and the success rate of that resolution.",
+      "examples": [
+        "Unrecognized recurring charge from StreamFlix",
+        "Customer says the same purchase appears twice"
+      ]
+    },
+    {
+      "id": "get_pattern_volume",
+      "name": "Check complaint volume",
+      "description": "Reports how many cases of a given pattern were recorded in the last thirty days, useful to tell an isolated incident from a systemic issue.",
+      "examples": [
+        "How many customers complained about StreamFlix recently?"
+      ]
+    }
+  ]
+}
